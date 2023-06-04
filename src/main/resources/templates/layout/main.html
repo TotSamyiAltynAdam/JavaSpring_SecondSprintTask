@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org" xmlns:xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/bootstrap.min.css'}">
+    <script type="text/javascript" th:src="@{'/js/bootstrap.bundle.js'}"></script>
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="container" th:insert="~{layout/navbar}"></div>
+
+    <div class="container mt-2" layout:fragment="site_content"></div>
+
+</body>
+</html>

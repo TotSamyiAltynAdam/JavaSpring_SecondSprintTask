@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org" xmlns:xlmns="http://www.w3.org/1999/xhtml"
+    xmlns:layout="http://ultraq.net.nz/thymleaf/layout" layout:decorate="layout/main.html">
+
+    <div layout:fragment="site_content">
+
+        <div class="d-flex flex-wrap">
+            <div class="col-6" th:each="applicationdar: ${applications}">
+                <div class="border border-secondary border-2 rounded p-3 mt-3 me-2">
+                    <div>
+                        <span style="color: red; font-weight: bold" th:text="${applicationdar.getHandled()?'':'*(Новая)'}"></span>
+                        Заявка от <span style="font-weight:bold;" th:text="${applicationdar.getUserName()}"></span>
+                    </div>
+                    <div class="main_info mt-4">
+                        <div>Курс: <span style="font-weight: bold; color: gray;" th:text="${applicationdar.getCourseName()}"></span></div>
+                        <div th:text="${applicationdar.getCommentary()}"></div>
+                    </div>
+                    <div class="addition_info mt-3" style="display: flex; justify-content: space-between; width: 50%">
+                        <div style="font-weight: bold;" th:text="'Тел:'+${applicationdar.getPhone()}"></div>
+                        <div><a th:href="@{'/details/' + ${applicationdar.getId()}}" style="text-decoration: none;">Подробнее</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</html>
+
+
