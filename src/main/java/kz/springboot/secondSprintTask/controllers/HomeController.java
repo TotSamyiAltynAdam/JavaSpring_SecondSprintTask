@@ -70,11 +70,6 @@ public class HomeController {
     }
     @PostMapping(value="/deleteApplication")
     public String deleteApplication(@RequestParam(name="id", defaultValue = "0") Long id){
-        System.out.println();
-        System.out.println();
-        System.out.println("afnenfjenfjenfjenfkenefnekfe");
-        System.out.println();
-        System.out.println();
         ApplicationRequest application = applicationService.getApplication(id);
         if(application!=null) {
             applicationService.deleteApplication(application);
